@@ -41,7 +41,14 @@
       </geometry>
       <origin rpy="0 0 ${M_PI/2}"/>
       <material name="green"/>
-    </visual>  
+    </visual>
+    <collision>
+      <geometry>
+        <xacro:puma560_link_geometry link_num="1"/>
+      </geometry>
+      <origin rpy="0 0 ${M_PI/2}"/>
+      <material name="green"/>
+    </collision>
   </link>
 
   <link name="link2">
@@ -51,7 +58,14 @@
       </geometry>
       <origin xyz="0 0 -0.1" rpy="0 0 0"/>
       <material name="red"/>
-    </visual>  
+    </visual>
+    <collision>
+      <geometry>
+        <xacro:puma560_link_geometry link_num="2"/>
+      </geometry>
+      <origin xyz="0 0 -0.1" rpy="0 0 0"/>
+      <material name="red"/>
+    </collision>
   </link>
 
   <joint name="j1" type="revolute">
@@ -69,7 +83,14 @@
       </geometry>
       <origin xyz="0 0 ${0.0435+d_2}"/>
       <material name="blue"/>
-    </visual>  
+    </visual>
+    <collision>
+      <geometry>
+        <xacro:puma560_link_geometry link_num="3"/>
+      </geometry>
+      <origin xyz="0 0 ${0.0435+d_2}"/>
+      <material name="blue"/>
+    </collision>
   </link>
 
   <joint name="j2" type="revolute">
@@ -87,7 +108,14 @@
       </geometry>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <material name="green"/>
-    </visual>  
+    </visual>
+    <collision>
+      <geometry>
+        <xacro:puma560_link_geometry link_num="4"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <material name="green"/>
+    </collision>
   </link>
 
   <joint name="j3" type="revolute">
@@ -105,7 +133,14 @@
       </geometry>
       <origin xyz="0 0 ${d_4-0.071}" rpy="0 0 ${M_PI/2}"/>
       <material name="red"/>
-    </visual>  
+    </visual>
+    <collision>
+      <geometry>
+        <xacro:puma560_link_geometry link_num="5"/>
+      </geometry>
+      <origin xyz="0 0 ${d_4-0.071}" rpy="0 0 ${M_PI/2}"/>
+      <material name="red"/>
+    </collision>
   </link> 
 
   <joint name="j4" type="revolute">
@@ -123,7 +158,14 @@
       </geometry>
       <origin xyz="0 0 0" rpy="${M_PI} 0 ${M_PI/2}"/>
       <material name="green"/>
-    </visual>  
+    </visual>
+    <collision>
+      <geometry>
+        <xacro:puma560_link_geometry link_num="6"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="${M_PI} 0 ${M_PI/2}"/>
+      <material name="green"/>
+    </collision>
   </link> 
 
   <joint name="j5" type="revolute">
@@ -141,7 +183,14 @@
       </geometry>
       <origin xyz="0 0 -0.010" rpy="0 0 0"/>
       <material name="blue"/>
-    </visual>  
+    </visual>
+    <collision>
+      <geometry>
+        <xacro:puma560_link_geometry link_num="7"/>
+      </geometry>
+      <origin xyz="0 0 -0.010" rpy="0 0 0"/>
+      <material name="blue"/>
+    </collision>
   </link> 
 
   <joint name="j6" type="revolute">
