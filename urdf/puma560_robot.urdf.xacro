@@ -34,6 +34,28 @@
   <xacro:property name="a_5" value="0"/>
   <xacro:property name="a_6" value="0"/>
 
+  <link name="mobile_base">
+    <visual>
+      <geometry>
+        <cylinder length="0.5" radius="0.3"/>
+      </geometry>
+      <origin xyz="0 0 -0.25" rpy="0 0 0"/>
+      <color rgba="0.8 0.8 0.8 0.8"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.6" radius="0.2"/>
+      </geometry>
+      <origin xyz="0 0 -0.25" rpy="0 0 0"/>
+      <color rgba="0.8 0.8 0.8 0.8"/>
+    </collision>
+  </link>
+
+  <joint name="base_to_link1" type="fixed">
+    <parent link="mobile_base"/>
+    <child link="link1"/>
+  </joint>
+
   <link name="link1">
     <visual>
       <geometry>
