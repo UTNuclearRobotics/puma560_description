@@ -34,6 +34,35 @@
   <xacro:property name="a_5" value="0"/>
   <xacro:property name="a_6" value="0"/>
 
+  <!-- Make a planar joint with the world by hand -->
+  <link name="world" />
+  <link name="planar_x_link" />
+  <link name="planar_y_link" />
+
+  <joint name="planar_x_joint" type="prismatic">
+    <parent link="world"/>
+    <child link="planar_x_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="10" velocity="1" lower="-10" upper="10" />
+  </joint>
+
+  <joint name="planar_y_joint" type="prismatic">
+    <parent link="planar_x_link"/>
+    <child link="planar_y_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="10" velocity="1" lower="-10" upper="10" />
+  </joint>
+
+  <joint name="planar_yaw_joint" type="revolute">
+    <parent link="planar_y_link"/>
+    <child link="mobile_base"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="1" lower="${-2*3.1415}" upper="${2*3.1415}" />
+  </joint>
+
   <link name="mobile_base">
     <visual>
       <geometry>
